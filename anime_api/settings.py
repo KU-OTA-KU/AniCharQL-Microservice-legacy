@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-_=$9c-xgp7h1wx4e+k%g9rsmb&d4&6w)hf-trjr9p$6it&vi(('
+SECRET_KEY = 'django-insecure-zzw+mcn&^t5ga697+j)+f8hi5z$@hc#qglbi7pa0ze&4+u#(wx'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'graphene_django',
-    'api.apps.ApiConfig',
+    'api'
 ]
 
 MIDDLEWARE = [
@@ -78,10 +78,10 @@ WSGI_APPLICATION = 'anime_api.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': "django_anime_api",
-        'USER': "vlad",
-        'PASSWORD': "Hasmik201810",
-        'HOST': "localhost",
+        'NAME': 'anime_api',
+        'USER': 'vlad',
+        'PASSWORD': '12341234',
+        'HOST': 'db',
         'PORT': '5432',
     }
 }

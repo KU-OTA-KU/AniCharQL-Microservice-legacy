@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres
+    environment:
+      POSTGRES_DB: anime_api
+      POSTGRES_USER: vlad
+      POSTGRES_PASSWORD: 12341234
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "1111:5432"
+  
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin 
+    ports:
+      - "5050:80"
+    depends_on:
+      - db
+      
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
+volumes:
+  postgres_data:
+
